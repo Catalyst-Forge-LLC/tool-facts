@@ -17,6 +17,10 @@ in the xFacts family:
 | [ModelFacts](https://modelfacts.dev) | **Brain** | What went into this model? |
 | AgentFacts (agentfacts.dev) | **Hands** | What may this actor do, and on what leash? |
 | **ToolFacts** | **Toolbelt** | What does this instrument touch when invoked? |
+| SkillFacts (skillfacts.dev) | **Playbook** | What will this teach my agent to do? (domain reserved, build later) |
+
+Suite-level strategy lives in the standing vision doc:
+`catalyst-forge/docs/xfacts-suite-vision.md`.
 
 A `TOOL_FACTS.md` labels a *toolset* — in v0.1, concretely, an MCP server — with
 per-tool facts: what each tool does in one line, whether it reads or writes or
