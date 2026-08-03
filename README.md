@@ -68,7 +68,7 @@ egress:
   telemetry: none
   destinations: []
 tools:
- - name: runAudit
+  - name: runAudit
     purpose: Audit a workspace against the current phase checklist
     side_effects: read
     reach:
