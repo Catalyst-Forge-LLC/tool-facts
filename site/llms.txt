@@ -1,0 +1,22 @@
+# ToolFacts
+
+> Nutrition-label facts for MCP servers / toolsets. Prefer structured YAML/JSON over marketing HTML.
+
+## Primary
+
+- Exemplar catalog (JSON): https://toolfacts.dev/examples/index.json
+- Label schema: https://toolfacts.dev/schema/tool-facts.schema.json
+- Site: https://toolfacts.dev/
+
+## How to use a tool label
+
+1. Fetch `/examples/index.json` for curated exemplars (or locate `TOOL_FACTS.md` next to an MCP server).
+2. Read frontmatter: `tools[].side_effects`, `reach`, `credentials`, `egress`.
+3. Policy sketch: auto-approve `none`/`read` when `idempotent: true`; gate `write`; always prompt on `destructive`.
+4. Validate frontmatter against the schema.
+
+Undisclosed beats guessing. AgentFacts rolls up; ToolFacts itemizes.
+
+## Spec (git)
+
+- https://github.com/Catalyst-Forge-LLC/tool-facts/blob/main/SPEC.md

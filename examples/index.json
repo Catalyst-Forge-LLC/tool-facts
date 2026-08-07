@@ -1,0 +1,74 @@
+{
+  "label": "tool-facts",
+  "version": "0.1.0",
+  "updated": "2026-08-07",
+  "schema": "https://toolfacts.dev/schema/tool-facts.schema.json",
+  "note": "Curated exemplars for format teaching and policy demos. Illustrative labels are not vendor-signed certificates.",
+  "exemplars": [
+    {
+      "slug": "forgekit-mcp",
+      "name": "ForgeKit MCP Server",
+      "developer": "Catalyst Forge",
+      "status": "active",
+      "worst_side_effects": "read",
+      "filesystem": "scoped",
+      "network": "none",
+      "processes": false,
+      "credentials_required": false,
+      "path": "forgekit-mcp/TOOL_FACTS.md",
+      "dogfood": true
+    },
+    {
+      "slug": "filesystem-mcp",
+      "name": "Filesystem MCP Server",
+      "developer": "Model Context Protocol (illustrative)",
+      "status": "active",
+      "worst_side_effects": "write",
+      "filesystem": "read-write",
+      "network": "none",
+      "processes": false,
+      "credentials_required": false,
+      "path": "filesystem-mcp/TOOL_FACTS.md",
+      "dogfood": false
+    },
+    {
+      "slug": "github-mcp",
+      "name": "GitHub MCP Server",
+      "developer": "GitHub (illustrative)",
+      "status": "active",
+      "worst_side_effects": "destructive",
+      "filesystem": "none",
+      "network": "allowlist",
+      "processes": false,
+      "credentials_required": true,
+      "path": "github-mcp/TOOL_FACTS.md",
+      "dogfood": false
+    },
+    {
+      "slug": "fetch-mcp",
+      "name": "Fetch MCP Server",
+      "developer": "Model Context Protocol (illustrative)",
+      "status": "active",
+      "worst_side_effects": "read",
+      "filesystem": "none",
+      "network": "unrestricted",
+      "processes": false,
+      "credentials_required": false,
+      "path": "fetch-mcp/TOOL_FACTS.md",
+      "dogfood": false
+    },
+    {
+      "slug": "shell-mcp",
+      "name": "Shell MCP Server",
+      "developer": "Catalyst Forge (illustrative)",
+      "status": "preview",
+      "worst_side_effects": "destructive",
+      "filesystem": "read-write",
+      "network": "unrestricted",
+      "processes": true,
+      "credentials_required": false,
+      "path": "shell-mcp/TOOL_FACTS.md",
+      "dogfood": false
+    }
+  ]
+}

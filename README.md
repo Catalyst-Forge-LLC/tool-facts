@@ -13,7 +13,8 @@
   <a href="https://toolfacts.dev">toolfacts.dev</a> ·
   <a href="./SPEC.md">Spec</a> ·
   <a href="https://toolfacts.dev/schema/tool-facts.schema.json">Schema</a> ·
-  <a href="./examples/TOOL_FACTS.md">Example</a>
+  <a href="./examples/">Examples</a> ·
+  <a href="https://toolfacts.dev/llms.txt">llms.txt</a>
 </p>
 
 ---
@@ -45,52 +46,26 @@ Useful for:
 - **Agent builders** composing `TOOL_FACTS.md` into `AGENT_FACTS.md`
 - **CI** that rejects unlabeled or schema-invalid toolsets
 
+## Exemplars
+
+| Slug | Worst side effect | Network | Notes |
+|---|---|---|---|
+| [forgekit-mcp](./examples/forgekit-mcp/TOOL_FACTS.md) | read | none | Dogfood |
+| [filesystem-mcp](./examples/filesystem-mcp/TOOL_FACTS.md) | write | none | Scoped disk |
+| [github-mcp](./examples/github-mcp/TOOL_FACTS.md) | destructive | allowlist | Credentials |
+| [fetch-mcp](./examples/fetch-mcp/TOOL_FACTS.md) | read | unrestricted | Open-world HTTP |
+| [shell-mcp](./examples/shell-mcp/TOOL_FACTS.md) | destructive | unrestricted | Process spawn |
+
+Catalog JSON: [`examples/index.json`](./examples/index.json) (also served at
+`/examples/index.json`). Template: [`examples/TOOL_FACTS.template.md`](./examples/TOOL_FACTS.template.md).
+
 ## What it looks like
 
-Every `TOOL_FACTS.md` has two halves. The **YAML frontmatter is the source of truth** - 
+Every `TOOL_FACTS.md` has two halves. The **YAML frontmatter is the source of truth** -
 structured and validatable. The **Markdown body is a rendered label** for humans.
 
-```markdown
----
-tool_facts_version: "0.1.0"
-name: ForgeKit MCP Server
-developer: Catalyst Forge
-version: 0.3.0
-status: active
-license: Apache-2.0
-kind: mcp-server
-runtime:
-  execution: local-process
-  transport: stdio
-credentials:
-  required: []
-egress:
-  telemetry: none
-  destinations: []
-tools:
-  - name: runAudit
-    purpose: Audit a workspace against the current phase checklist
-    side_effects: read
-    reach:
-      filesystem: scoped
-      network: none
-      processes: false
-    idempotent: true
-generated:
-  date: 2026-08-03
-  generator: hand-authored
----
-
-# Tool Facts - ForgeKit MCP Server
-
-| Tool | Side effects | Filesystem | …
-|---|---|---|---|
-| runAudit | read | scoped | …
-```
-
-See the [full worked example](./examples/TOOL_FACTS.md), the
-[template](./examples/TOOL_FACTS.template.md), and the [specification](./SPEC.md).
-Fact groups:
+See the [ForgeKit worked example](./examples/forgekit-mcp/TOOL_FACTS.md) and the
+[specification](./SPEC.md). Fact groups:
 
 | Group | The label's… | Answers |
 |---|---|---|
@@ -104,33 +79,26 @@ Fact groups:
 
 ## Validating a file
 
-The frontmatter conforms to [`site/schema/tool-facts.schema.json`](./site/schema/tool-facts.schema.json)
-(served at [toolfacts.dev/schema/tool-facts.schema.json](https://toolfacts.dev/schema/tool-facts.schema.json)) - 
-any draft-07 validator works. This repo ships a small TypeScript CLI:
-
 ```bash
 cd validator
 pnpm install
-
-# exit code 1 on any failure - CI-friendly
-pnpm validate ../examples/TOOL_FACTS.md
-pnpm validate path/to/your/TOOL_FACTS.md
+pnpm validate ../examples/forgekit-mcp/TOOL_FACTS.md
+pnpm validate ../examples/*/TOOL_FACTS.md
 ```
+
+Schema: [`site/schema/tool-facts.schema.json`](./site/schema/tool-facts.schema.json).
 
 ## Generating a label
 
-The generator is planned, not shipped yet. Plan: MCP handshake (`tools/list`) first for
-names, descriptions, and schemas; package metadata next; optional LLM classification only
-for `side_effects` judgment, sanitized against the schema. See
+The generator is planned, not shipped yet. Plan: MCP handshake (`tools/list`) first;
+optional LLM classification only for `side_effects`, sanitized against the schema. See
 [`generator/README.md`](./generator/README.md).
-
-Until then, copy [`examples/TOOL_FACTS.template.md`](./examples/TOOL_FACTS.template.md)
-and fill it by hand.
 
 ## Roadmap
 
-- [x] Spec v0.1.0, canonical JSON Schema, worked example + template
+- [x] Spec v0.1.0, canonical JSON Schema, template
 - [x] Schema validator CLI (TypeScript)
+- [x] Multi-type exemplar ladder + `/examples/index.json` + `llms.txt`
 - [ ] Generator: MCP introspection + schema heuristics + optional LLM classification
 - [ ] Directory of labeled public MCP servers (shared crawl with AgentFacts)
 - [ ] Policy-integration demo (harness reading `TOOL_FACTS.md` for approvals)
@@ -138,35 +106,29 @@ and fill it by hand.
 
 ## Website
 
-The static site for [toolfacts.dev](https://toolfacts.dev) lives in [`site/`](./site/).
-On Cloudflare Pages, set the project root to `site` - no build step. Local preview:
-`npx serve site -p 3003` (or Live Preview on the folder).
+Static site in [`site/`](./site/). Cloudflare Pages root = `site`, no build.
 
 | Path | Purpose |
 |---|---|
 | [`site/index.html`](./site/index.html) | Marketing / docs landing |
 | [`site/schema/tool-facts.schema.json`](./site/schema/tool-facts.schema.json) | Canonical JSON Schema |
+| [`site/examples/`](./site/examples/) | Fetchable exemplar catalog |
+| [`site/llms.txt`](./site/llms.txt) | Agent entrypoint |
+
+Session plan: [`specs/REVIEW-AND-PLAN.md`](./specs/REVIEW-AND-PLAN.md).
 
 ## Family
 
 Part of [xFacts](https://xfacts.dev): [AppFacts](https://appfacts.dev) ·
-[ModelFacts](https://modelfacts.dev) · [AgentFacts](https://agentfacts.dev) · ToolFacts.
-
-## Contributing
-
-This is **v0.1.0** - the spec's required fields may still shift before v1.0. Issues and
-proposals on enums, reach vocabulary, and policy conventions are welcome.
+[ModelFacts](https://modelfacts.dev) · [AgentFacts](https://agentfacts.dev) ·
+[SkillFacts](https://skillfacts.dev) · ToolFacts.
 
 ## License
 
-- **Spec & schema:** [CC0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain) - adopt them freely, no attribution needed.
-- **Tooling (validator):** MIT.
+- **Spec & schema:** [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- **Tooling (validator):** MIT
 
 ---
-
-<p align="center">
-  Part of <a href="https://toolfacts.dev">toolfacts.dev</a> · Family at <a href="https://xfacts.dev">xfacts.dev</a>
-</p>
 
 <p align="center">
   <em>"Know what it touches before your agent picks it up."</em>

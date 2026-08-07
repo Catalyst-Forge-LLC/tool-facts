@@ -495,11 +495,31 @@ generated:
             <ul class="links">
               <li><a href="https://github.com/Catalyst-Forge-LLC/tool-facts/blob/main/SPEC.md">SPEC.md</a></li>
               <li><a href="/schema/tool-facts.schema.json">JSON Schema</a></li>
-              <li><a href="https://github.com/Catalyst-Forge-LLC/tool-facts/blob/main/examples/TOOL_FACTS.md">Full example</a></li>
+              <li><a href="/examples/index.json">Exemplar catalog (JSON)</a></li>
+              <li><a href="/examples/forgekit-mcp/TOOL_FACTS.md">ForgeKit example</a></li>
               <li><a href="https://github.com/Catalyst-Forge-LLC/tool-facts/blob/main/examples/TOOL_FACTS.template.md">Template</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div class="wrap prose">
+        <h2 class="section-title">Exemplar ladder</h2>
+        <p class="section-lead">Five shapes so side effects, reach, and credentials can be compared at a glance.</p>
+        <p>
+          Machine index: <a href="/examples/index.json"><code>/examples/index.json</code></a>.
+          Illustrative labels teach the format; only ForgeKit is Catalyst Forge dogfood.
+        </p>
+        <ul class="who">
+          <li><a href="/examples/forgekit-mcp/TOOL_FACTS.md">forgekit-mcp</a> - worst <code>read</code>, scoped FS, no network</li>
+          <li><a href="/examples/filesystem-mcp/TOOL_FACTS.md">filesystem-mcp</a> - worst <code>write</code>, no network</li>
+          <li><a href="/examples/github-mcp/TOOL_FACTS.md">github-mcp</a> - credentials + allowlist + <code>destructive</code></li>
+          <li><a href="/examples/fetch-mcp/TOOL_FACTS.md">fetch-mcp</a> - unrestricted network read</li>
+          <li><a href="/examples/shell-mcp/TOOL_FACTS.md">shell-mcp</a> - process spawn, treat as <code>destructive</code></li>
+        </ul>
       </div>
     </section>
 
@@ -513,8 +533,8 @@ generated:
         <div class="split">
           <pre># validate any TOOL_FACTS.md (CI-friendly exit codes)
 cd tool-facts/validator &amp;&amp; pnpm install
-pnpm validate ../examples/TOOL_FACTS.md
-pnpm validate path/to/TOOL_FACTS.md</pre>
+pnpm validate ../examples/forgekit-mcp/TOOL_FACTS.md
+pnpm validate ../examples/*/TOOL_FACTS.md</pre>
           <div class="prose">
             <p>
               Frontmatter is checked against
