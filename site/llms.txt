@@ -5,6 +5,7 @@
 ## Primary
 
 - Exemplar catalog (JSON): https://toolfacts.dev/examples/index.json
+- Portable viewer: https://toolfacts.dev/v#tf1.… (human skim; flip for raw; see each exemplar `viewer` field)
 - Label schema: https://toolfacts.dev/schema/tool-facts.schema.json
 - Site: https://toolfacts.dev/
 

@@ -99,10 +99,11 @@ optional LLM classification only for `side_effects`, sanitized against the schem
 - [x] Spec v0.1.0, canonical JSON Schema, template
 - [x] Schema validator CLI (TypeScript)
 - [x] Multi-type exemplar ladder + `/examples/index.json` + `llms.txt`
+- [x] Portable `/v#tf1.…` viewer with flip-to-raw + copy; exemplars deep-link in
 - [ ] Generator: MCP introspection + schema heuristics + optional LLM classification
 - [ ] Directory of labeled public MCP servers (shared crawl with AgentFacts)
 - [ ] Policy-integration demo (harness reading `TOOL_FACTS.md` for approvals)
-- [ ] Badge / portable label, following AppFacts
+- [ ] QR / badge emission from generator
 
 ## Website
 
