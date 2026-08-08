@@ -1,4 +1,4 @@
-# ToolFacts Specification - v0.1.0
+# ToolFacts Specification - v0.1.1
 
 > *"Know what it touches before your agent picks it up."*
 
@@ -19,9 +19,9 @@ not per tool. A tool removed or a side effect changed is a new file version.
   belong here.
 - Facts about what an agent is *configured or permitted to do* (model binding,
   autonomy, approval policy, memory) belong in AgentFacts.
-- `AGENT_FACTS.md` references `TOOL_FACTS.md` files (by URL or path) the same way it
-  references `MODEL_FACTS.md`. AgentFacts `tools` / `reach` groups are the rollup;
-  ToolFacts is the itemized detail.
+- `AGENT_FACTS.md` references `TOOL_FACTS.md` files (by URL preferred; path OK in
+  monorepos) the same way it references `MODEL_FACTS.md`. AgentFacts `tools` /
+  `reach` groups are the rollup; ToolFacts is the itemized detail.
 
 ## File
 
@@ -157,9 +157,22 @@ self-reported.
   [`https://toolfacts.dev/schema/tool-facts.schema.json`](https://toolfacts.dev/schema/tool-facts.schema.json)
   Source in this repo: [`site/schema/tool-facts.schema.json`](./site/schema/tool-facts.schema.json).
 
+## Publication & discovery
+
+Suite contract: [x-facts `DISCOVERY-AND-PUBLICATION.md`](../x-facts/specs/DISCOVERY-AND-PUBLICATION.md).
+
+| | |
+|---|---|
+| **Canonical file** | Toolset / MCP package root `TOOL_FACTS.md` |
+| **Primary pointer** | MCP-facing surface: server README, registry metadata, and/or install docs / `mcp.json` advertising a fetchable URL (recommended: `toolFactsUrl` or `tool_facts`) |
+| **Consumer path** | Host: install target → ToolFacts URL → policy |
+| **Fallback** | `/.well-known/x-facts/tool.md` on the server homepage; suite directory once a crawl exists |
+
+Generators **SHOULD** print the canonical URL (when known) and a `/v#tf1.…` viewer URL when a portable payload is emitted. Harnesses **MUST NOT** treat the viewer fragment as the primary machine API when a canonical URL exists. Cross-package refs **SHOULD** use `https://` URLs to this file.
+
 ## Versioning
 
-- **This document:** v0.1.0.
+- **This document:** v0.1.1 (publication & discovery; see revision history).
 - **Files** declare `tool_facts_version` (currently `"0.1.0"`) so tooling can evolve
   independently of the prose document.
 - Required-field list may still change before v1.0.
@@ -170,6 +183,7 @@ self-reported.
 
 | Spec doc | Notes |
 |---|---|
+| **0.1.1** | Publication & discovery: MCP pointer surfaces, URL-preferred refs, link to suite discovery contract. |
 | **0.1.0** | Initial specification, formalizing [`GENESIS.md`](./GENESIS.md): frontmatter + rendered body, server-level groups (identity, runtime, credentials, egress) plus per-tool `side_effects` / `reach` / `idempotent`, closed enums, `undisclosed` convention, policy-integration intent. |
 
 ## License

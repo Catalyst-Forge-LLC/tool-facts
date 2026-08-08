@@ -32,26 +32,29 @@ No public directory crawl yet. Deploy/remote pending.
 ### Near-term
 
 1. Deploy toolfacts.dev + GitHub remote; hub status → live when true.
-2. **Generator v0.1:** MCP handshake → names/descriptions/schemas; heuristics for
+2. Honor suite [discovery/publication contract](../../x-facts/specs/DISCOVERY-AND-PUBLICATION.md):
+   document `toolFactsUrl` / README pointer; generator prints **canonical URL** +
+   `/v` viewer URL; policy demo **fetches by URL** (not HTML scrape, not `/v` decode).
+3. **Generator v0.1:** MCP handshake → names/descriptions/schemas; heuristics for
    reach; LLM only for `side_effects`, sanitized; human-review flag before publish.
-3. Regenerate ForgeKit label with **complete** `tools/list` inventory.
-4. Policy sketch → **working demo**: small host/harness reads TOOL_FACTS and
-   auto-approves read+idempotent, gates write, always prompts destructive.
-5. Document “unlabeled MCP ⇒ treat as max caution” as a *CF tooling opinion*
+4. Regenerate ForgeKit label with **complete** `tools/list` inventory.
+5. Policy sketch → **working demo**: small host/harness reads TOOL_FACTS (via URL)
+   and auto-approves read+idempotent, gates write, always prompts destructive.
+6. Document “unlabeled MCP ⇒ treat as max caution” as a *CF tooling opinion*
    (optional flag), not a suite mandate.
 
 ### Mid-term
 
-6. Shared MCP crawl with AgentFacts; seed directory (side effects + egress sort).
-7. `capability_basis`-style honesty for annotation-derived fields (“self-reported
+7. Shared MCP crawl with AgentFacts; seed directory (side effects + egress sort).
+8. `capability_basis`-style honesty for annotation-derived fields (“self-reported
    from MCP hints” vs reviewed).
-8. QR/badge emission once generator exists (AppFacts pattern).
-9. Pitch one host/runtime for integration (open agent stack or CF ForgeKit path).
+9. QR/badge emission once generator exists (AppFacts pattern).
+10. Pitch one host/runtime for integration (open agent stack or CF ForgeKit path).
 
 ### Later
 
-10. Verification / measurement of tool claims (paid layer; no “certified” until then).
-11. Non-MCP `kind` values only when admission pressure is real (v0.2+).
+11. Verification / measurement of tool claims (paid layer; no “certified” until then).
+12. Non-MCP `kind` values only when admission pressure is real (v0.2+).
 
 ## Roadmap phases
 
@@ -72,10 +75,12 @@ No public directory crawl yet. Deploy/remote pending.
 ## Success signals
 
 - A host refuses or gates tools using ToolFacts without scraping HTML.
-- Third-party MCP servers ship `TOOL_FACTS.md` next to the server package.
+- Third-party MCP servers ship `TOOL_FACTS.md` next to the server package **and**
+  advertise a fetchable label URL on the install surface.
 - AgentFacts toolsets point at published ToolFacts URLs by default.
 
 ## Related
 
+- [x-facts `DISCOVERY-AND-PUBLICATION.md`](../../x-facts/specs/DISCOVERY-AND-PUBLICATION.md)
 - [`REVIEW-AND-PLAN.md`](./REVIEW-AND-PLAN.md), [`PORTABLE-VIEWER.md`](./PORTABLE-VIEWER.md), [`../SPEC-tf1.md`](../SPEC-tf1.md)
 - Suite index: [`x-facts/specs/ROADMAPS.md`](../../x-facts/specs/ROADMAPS.md)
