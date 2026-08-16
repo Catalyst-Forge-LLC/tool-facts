@@ -53,7 +53,7 @@ the shared core; AgentFacts rolls up what ToolFacts itemizes.
 
 ## Acceptance criteria (when implemented)
 
-- Pointed at ForgeKit's MCP server: tool count and names match `tools/list` with no LLM.
+- Pointed at ForgeTrail's MCP server: tool count and names match `tools/list` with no LLM.
 - Deterministic draft mode (no `--model`) marks judgment fields `# TODO: verify`.
 - Emitted files pass `pnpm validate` in [`../validator`](../validator).
 

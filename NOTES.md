@@ -18,13 +18,13 @@ Session plan: [`specs/REVIEW-AND-PLAN.md`](./specs/REVIEW-AND-PLAN.md).
 |---|---|
 | SPEC v0.1.0 | Done |
 | Schema + validator | Done; all exemplars validate |
-| Exemplar ladder (5) | forgekit / filesystem / github / fetch / shell |
+| Exemplar ladder (5) | forgetrail / filesystem / github / fetch / shell |
 | `site/examples` + `llms.txt` | Done |
 | Generator | Still plan-only |
 | Public directory / deploy | Not this session |
 
 ## Next
 
-1. MCP `tools/list` generator + full ForgeKit inventory.
+1. MCP `tools/list` generator + full ForgeTrail inventory.
 2. Shared crawl directory with AgentFacts.
 3. Owner: GitHub remote + Cloudflare Pages + DNS.

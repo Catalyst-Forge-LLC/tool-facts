@@ -95,7 +95,7 @@ Frontmatter sketch (starting point — the build session owns the enums):
 ```yaml
 ---
 tool_facts_version: "0.1.0"
-name: ForgeKit MCP Server
+name: ForgeTrail MCP Server
 developer: Catalyst Forge
 version: 0.3.0
 status: active
@@ -153,7 +153,7 @@ itemizes.
 
 ## Launch strategy
 
-1. **Dogfood:** ForgeKit's MCP server (29 tools) gets the first `TOOL_FACTS.md`,
+1. **Dogfood:** ForgeTrail's MCP server (29 tools) gets the first `TOOL_FACTS.md`,
    generated, then human-reviewed. It doubles as the AgentFacts worked example's
    reference.
 2. **One crawl, two directories:** the sweep of popular public MCP servers (official
@@ -184,7 +184,7 @@ tool-facts/
   SPEC.md               formal spec v0.1.0
   README.md             family-style: centered header, tagline, what-is-this
   NOTES.md              maintainer/agent state snapshot, kept current
-  examples/             TOOL_FACTS.md (worked: ForgeKit MCP), TOOL_FACTS.template.md
+  examples/             TOOL_FACTS.md (worked: ForgeTrail MCP), TOOL_FACTS.template.md
   validator/            TS ESM CLI, tsx + ajv + yaml, CI-friendly exit codes
   generator/            TS ESM CLI, MCP introspection first; shared core candidate
   site/                 static, Cloudflare Pages root=site, no build step
@@ -195,7 +195,7 @@ GitHub org: `Catalyst-Forge-LLC`, repo `tool-facts` (owner creates and pushes).
 
 ## Milestones
 
-1. `SPEC.md` v0.1.0 + canonical JSON Schema + template + worked ForgeKit example
+1. `SPEC.md` v0.1.0 + canonical JSON Schema + template + worked ForgeTrail example
    (hand-authored, passes validation).
 2. Validator CLI.
 3. Generator: MCP introspection + schema heuristics + optional LLM classification.
@@ -206,7 +206,7 @@ GitHub org: `Catalyst-Forge-LLC`, repo `tool-facts` (owner creates and pushes).
 ## Acceptance criteria
 
 - Worked example and template pass the validator.
-- The generator, pointed at ForgeKit's MCP server, gets tool count and names exactly
+- The generator, pointed at ForgeTrail's MCP server, gets tool count and names exactly
   right with no LLM involved.
 - A stranger reading a `TOOL_FACTS.md` can answer in under a minute: which of these
   tools can write or destroy, what can they reach, what does the server need from

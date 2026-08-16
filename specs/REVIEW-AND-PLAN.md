@@ -16,7 +16,7 @@
 - Canonical draft-07 schema under `site/schema/`.
 - Working TypeScript validator (ajv + yaml).
 - Marketing site at AppFacts family quality (teal accent).
-- One strong dogfood exemplar: ForgeKit MCP (read-heavy, no credentials/egress).
+- One strong dogfood exemplar: ForgeTrail MCP (read-heavy, no credentials/egress).
 - Template + generator plan doc.
 
 ### Gaps for first useful deployment
@@ -47,19 +47,19 @@ Move/expand under `examples/<slug>/TOOL_FACTS.md`:
 
 | Slug | Type signal | Teaches |
 |---|---|---|
-| `forgekit-mcp` | guidance / read-scoped | Safe baseline (existing ForgeKit label). |
+| `forgetrail-mcp` | guidance / read-scoped | Safe baseline (existing ForgeTrail label). |
 | `filesystem-mcp` | scoped FS read-write | Write without network. |
 | `github-mcp` | credentials + allowlisted network + write | Auth + remote mutation. |
 | `fetch-mcp` | unrestricted network read | Open-world HTTP. |
 | `shell-mcp` | processes + destructive | Worst-case toolbelt. |
 
 Keep `examples/TOOL_FACTS.template.md`. Retire or redirect flat `examples/TOOL_FACTS.md`
-to `forgekit-mcp` (update README/site links).
+to `forgetrail-mcp` (update README/site links).
 
 Add `examples/README.md` and `examples/index.json` (catalog metadata for humans/agents).
 
 **Honesty rule:** exemplars for public MCP shapes are **illustrative labels** based on
-documented capabilities, not vendor-signed certificates. Bodies state that. ForgeKit
+documented capabilities, not vendor-signed certificates. Bodies state that. ForgeTrail
 remains the dogfooded Catalyst Forge label.
 
 ### P2 — Site agent surfaces
@@ -76,7 +76,7 @@ Extend `_headers` CORS for `/examples/*` (same spirit as `/schema/*`).
 ### P3 — Site / README / NOTES
 
 - New `#examples` section on `site/index.html` listing the ladder + worst side effect.
-- Update format links to forgekit path + catalog.
+- Update format links to forgetrail path + catalog.
 - README: multi-example table, roadmap checkmarks for exemplars + llms.txt.
 - NOTES: state snapshot for this session.
 

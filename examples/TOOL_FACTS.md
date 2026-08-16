@@ -1,13 +1,13 @@
 ---
 tool_facts_version: "0.1.0"
-name: ForgeKit MCP Server
+name: ForgeTrail MCP Server
 developer: Catalyst Forge
 version: 0.3.0
 status: active
 license: Apache-2.0
 kind: mcp-server
 homepage: https://www.catalystforge.com/
-repository: https://github.com/Catalyst-Forge-LLC/forgekit
+repository: https://github.com/Catalyst-Forge-LLC/forgetrail
 runtime:
   execution: local-process
   transport: stdio
@@ -26,7 +26,7 @@ tools:
       processes: false
     idempotent: true
   - name: getPhaseGuidance
-    purpose: Return phase guidance text for the current ForgeKit workflow stage
+    purpose: Return phase guidance text for the current ForgeTrail workflow stage
     side_effects: none
     reach:
       filesystem: none
@@ -34,7 +34,7 @@ tools:
       processes: false
     idempotent: true
   - name: getTemplate
-    purpose: Return a named ForgeKit template document by id
+    purpose: Return a named ForgeTrail template document by id
     side_effects: none
     reach:
       filesystem: none
@@ -42,7 +42,7 @@ tools:
       processes: false
     idempotent: true
   - name: searchLessons
-    purpose: Search the ForgeKit lessons corpus by query string
+    purpose: Search the ForgeTrail lessons corpus by query string
     side_effects: none
     reach:
       filesystem: none
@@ -66,7 +66,7 @@ tools:
       processes: false
     idempotent: true
   - name: validateTracking
-    purpose: Validate .forgekit/workflow_tracking.json against the tracking schema
+    purpose: Validate .forgetrail/workflow_tracking.json against the tracking schema
     side_effects: read
     reach:
       filesystem: scoped
@@ -89,7 +89,7 @@ credits:
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
 ---
 
-# Tool Facts - ForgeKit MCP Server
+# Tool Facts - ForgeTrail MCP Server
 
 | | |
 |---|---|
@@ -119,7 +119,7 @@ None required.
 
 ## Tools (representative subset)
 
-The live ForgeKit MCP server exposes **29 tools**. This label lists **8** representative
+The live ForgeTrail MCP server exposes **29 tools**. This label lists **8** representative
 tools so the shape is clear; regenerate from `tools/list` for a complete inventory.
 
 | Tool | Side effects | Filesystem | Network | Processes | Idempotent |
@@ -138,12 +138,12 @@ tools so the shape is clear; regenerate from `tools/list` for a complete invento
 | Tool | Purpose |
 |---|---|
 | ping | Health check; returns a fixed ok payload |
-| getPhaseGuidance | Return phase guidance text for the current ForgeKit workflow stage |
-| getTemplate | Return a named ForgeKit template document by id |
-| searchLessons | Search the ForgeKit lessons corpus by query string |
+| getPhaseGuidance | Return phase guidance text for the current ForgeTrail workflow stage |
+| getTemplate | Return a named ForgeTrail template document by id |
+| searchLessons | Search the ForgeTrail lessons corpus by query string |
 | getChecklist | Return a milestone checklist section or the full checklist |
 | runAudit | Audit a workspace against the current phase checklist |
-| validateTracking | Validate `.forgekit/workflow_tracking.json` against the tracking schema |
+| validateTracking | Validate `.forgetrail/workflow_tracking.json` against the tracking schema |
 | ingestPlanArtifact | Parse a plan artifact and return a draft `PHASE_1_BRIEF.md` body |
 
 Policy sketch: every listed tool is `none` or `read` and idempotent. A host could

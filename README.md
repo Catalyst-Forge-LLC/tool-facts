@@ -50,7 +50,7 @@ Useful for:
 
 | Slug | Worst side effect | Network | Notes |
 |---|---|---|---|
-| [forgekit-mcp](./examples/forgekit-mcp/TOOL_FACTS.md) | read | none | Dogfood |
+| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | read | none | Dogfood |
 | [filesystem-mcp](./examples/filesystem-mcp/TOOL_FACTS.md) | write | none | Scoped disk |
 | [github-mcp](./examples/github-mcp/TOOL_FACTS.md) | destructive | allowlist | Credentials |
 | [fetch-mcp](./examples/fetch-mcp/TOOL_FACTS.md) | read | unrestricted | Open-world HTTP |
@@ -64,7 +64,7 @@ Catalog JSON: [`examples/index.json`](./examples/index.json) (also served at
 Every `TOOL_FACTS.md` has two halves. The **YAML frontmatter is the source of truth** -
 structured and validatable. The **Markdown body is a rendered label** for humans.
 
-See the [ForgeKit worked example](./examples/forgekit-mcp/TOOL_FACTS.md) and the
+See the [ForgeTrail worked example](./examples/forgetrail-mcp/TOOL_FACTS.md) and the
 [specification](./SPEC.md). Fact groups:
 
 | Group | The label's… | Answers |
@@ -82,7 +82,7 @@ See the [ForgeKit worked example](./examples/forgekit-mcp/TOOL_FACTS.md) and the
 ```bash
 cd validator
 pnpm install
-pnpm validate ../examples/forgekit-mcp/TOOL_FACTS.md
+pnpm validate ../examples/forgetrail-mcp/TOOL_FACTS.md
 pnpm validate ../examples/*/TOOL_FACTS.md
 ```
 

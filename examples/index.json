@@ -6,8 +6,8 @@
   "note": "Curated exemplars for format teaching and policy demos. Illustrative labels are not vendor-signed certificates.",
   "exemplars": [
     {
-      "slug": "forgekit-mcp",
-      "name": "ForgeKit MCP Server",
+      "slug": "forgetrail-mcp",
+      "name": "ForgeTrail MCP Server",
       "developer": "Catalyst Forge",
       "status": "active",
       "worst_side_effects": "read",
@@ -15,7 +15,7 @@
       "network": "none",
       "processes": false,
       "credentials_required": false,
-      "path": "forgekit-mcp/TOOL_FACTS.md",
+      "path": "forgetrail-mcp/TOOL_FACTS.md",
       "dogfood": true,
       "viewer": "/v#tf1.eNrFlU1vEzEQhv_KaM6bhI_bcioVUESRIoq4IFRN7dldE6_tesZJoyr_HXm7KS3qjUPOHs8873ze4xbb1w0GGhlb_Bhzz1-cwtfzNVxx3nLGBi1v2cfEGVs8JyW_F4XJFBvcchYXA7b4avl2-QobFCUtgi2SUbetNt4ZDlIDnCUyAy_eTIYbFyy2OJq0kGOsXIK6ynKPfMem6INvHw35RcrRsAg2qJmCpJgVWxS1LuKhQZPZclBHXur_zLfFZbbY_vx1aJD7XP-296jseWTNe2wxxMCTRFEXqEaT2V5jrH5-3h-Tk0s4K9ZplegsX3PXsdEqNDPZys5khhqgc55lL8pjxTMxcX0OrLuYN3-DznJYsO3ICx8adJbHFJWDYqu5cIOp5BQfcleDA0F1IokMA_XkgijowGBKzhwU0kDCYAY2G-9E8dA8CtiSd5aUv2cyGxf6Uwn5MXPAsqtNtHG6qv46H3fXOrMtf0sMzwQeX0DMwCM9FZZeFDPDvSxmfvxfKRdMXoeHdL-DzFpyECDo3B1biBtItPeR7FPannVdi_SpOEvB8GnIv02sc7v0Mwoo3yl0MT9rqcetcKwSiFLP_2j6zmPypKeVQ1CB7F9knanARlPGquZmD-5ZPYQpm-GSRerwn4T-akKYkv5I7h-AwMScilTs28J5D6K5tvvz5J8_zvtpsz9W5xrDkw0EwqbuVZi7qivev7yfXOhZdO0pnGV1HZkTqVlTFgaC5CkAzShAwc4DDgQ2U6ewvji7-nD9-vr9t88fPi5HCzfR7vHwq8EhjpzqjLQ4qCZpV6vdbrc08_Wc9t7SxHE1aUlRnMbpHh2te6dDuZlMjid3MbXG4vLyfHXcm9MlLMGQ1jNXdRz-AHJfvqw"
     },

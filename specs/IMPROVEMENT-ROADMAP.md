@@ -25,7 +25,7 @@ No public directory crawl yet. Deploy/remote pending.
 | **No harness consumer** | Network effects stay latent. |
 | Empty directory | Cold start; `undisclosed` only bites with coverage. |
 | Self-report risk | Wrong `none` on destructive tools is worse than silence. |
-| Incomplete ForgeKit inventory | Dogfood should list full tool count from live handshake. |
+| Incomplete ForgeTrail inventory | Dogfood should list full tool count from live handshake. |
 
 ## Improvements (ordered)
 
@@ -37,7 +37,7 @@ No public directory crawl yet. Deploy/remote pending.
    `/v` viewer URL; policy demo **fetches by URL** (not HTML scrape, not `/v` decode).
 3. **Generator v0.1:** MCP handshake → names/descriptions/schemas; heuristics for
    reach; LLM only for `side_effects`, sanitized; human-review flag before publish.
-4. Regenerate ForgeKit label with **complete** `tools/list` inventory.
+4. Regenerate ForgeTrail label with **complete** `tools/list` inventory.
 5. Policy sketch → **working demo**: small host/harness reads TOOL_FACTS (via URL)
    and auto-approves read+idempotent, gates write, always prompts destructive.
 6. Document “unlabeled MCP ⇒ treat as max caution” as a *CF tooling opinion*
@@ -49,7 +49,7 @@ No public directory crawl yet. Deploy/remote pending.
 8. `capability_basis`-style honesty for annotation-derived fields (“self-reported
    from MCP hints” vs reviewed).
 9. QR/badge emission once generator exists (AppFacts pattern).
-10. Pitch one host/runtime for integration (open agent stack or CF ForgeKit path).
+10. Pitch one host/runtime for integration (open agent stack or CF ForgeTrail path).
 
 ### Later
 
