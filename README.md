@@ -107,7 +107,7 @@ optional LLM classification only for `side_effects`, sanitized against the schem
 
 ## Website
 
-Static site for [toolfacts.dev](https://toolfacts.dev) lives in [`site/`](./site/). Publish with `pnpm ship` (Wrangler Pages project `tool-facts`, no build step). Git-connected Pages can also use project root `site`.
+Static site for [toolfacts.dev](https://toolfacts.dev) lives in [`site/`](./site/). Publish with `pnpm ship` (Wrangler Worker `tool-facts`, uploads `site/` as static assets, no build step).
 
 | Path | Purpose |
 |---|---|
