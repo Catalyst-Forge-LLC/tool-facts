@@ -18,6 +18,8 @@
 
 Undisclosed beats guessing. AgentFacts rolls up; ToolFacts itemizes.
 
+Catalyst Forge dogfood (see `dogfood: true` in the catalog): forgetrail-mcp, ollanet-mcp, dictawhisper-mcp.
+
 ## Spec (git)
 
 - https://github.com/Catalyst-Forge-LLC/tool-facts/blob/main/SPEC.md
