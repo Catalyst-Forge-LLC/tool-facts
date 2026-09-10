@@ -5,18 +5,22 @@
 ## Primary
 
 - Exemplar catalog (JSON): https://toolfacts.dev/examples/index.json
-- Portable viewer: https://toolfacts.dev/v#tf1.… (human skim; flip for raw; see each exemplar `viewer` field)
+- Portable viewer: https://toolfacts.dev/v#tf1.… (human skim, flip for raw, see each exemplar `viewer` field)
 - Label schema: https://toolfacts.dev/schema/tool-facts.schema.json
 - Site: https://toolfacts.dev/
 
 ## How to use a tool label
 
 1. Fetch `/examples/index.json` for curated exemplars (or locate `TOOL_FACTS.md` next to an MCP server).
-2. Read frontmatter: `tools[].side_effects`, `reach`, `credentials`, `egress`.
-3. Policy sketch: auto-approve `none`/`read` when `idempotent: true`; gate `write`; always prompt on `destructive`.
-4. Validate frontmatter against the schema.
+2. Read frontmatter: `tools[].side_effects`, `reach`, `credentials`, `egress`, plus `version` and `generated`.
+3. Bind the file to that server version, source, and `generated.date`. A later server can change while an old label remains.
+4. Treat the file as input to a host decision after human review. Do not treat an unreviewed file as authority to auto-approve. Read-only is not universally safe. A local scoped read is not the same as unrestricted network read.
+5. Returning a prompt is not the same as performing its instructions. ForgeTrail `runAudit` returns an audit prompt (`side_effects: none`, `filesystem: none`). It does not scan the workspace.
+6. Validate frontmatter against the schema.
 
-Undisclosed beats guessing. AgentFacts rolls up; ToolFacts itemizes.
+A `tools/list` comparison can show added, removed, or renamed tools. It cannot prove that a same-named tool still matches the label. This project does not ship a live drift monitor.
+
+Undisclosed beats guessing. AgentFacts rolls up. ToolFacts itemizes.
 
 Catalyst Forge dogfood (see `dogfood: true` in the catalog): forgetrail-mcp, ollanet-mcp, dictawhisper-mcp.
 

@@ -439,6 +439,7 @@
       };
       if (data.homepage) fm.homepage = data.homepage;
       if (data.repository) fm.repository = data.repository;
+      if (data.generated) fm.generated = data.generated;
       const body = [
         `# ${data.name}`,
         `\`${data.kind}\` · **${data.status}** · ${data.license}`,
@@ -462,12 +463,19 @@
       const egress = data.egress && typeof data.egress === "object" ? data.egress : {};
       const tools = (Array.isArray(data.tools) ? data.tools : []).map(normalizeTool).slice(0, 24);
 
+      const generated = data.generated && typeof data.generated === "object"
+        ? data.generated
+        : {};
+      const reviewed = generated.date
+        ? `${generated.date}${generated.generator ? ` · ${generated.generator}` : ""}`
+        : "";
       const metaRows = [
         ["Developer", data.developer],
         ["Version", data.version],
         ["Status", data.status],
         ["License", data.license],
         ["Kind", data.kind],
+        ...(reviewed ? [["Reviewed", reviewed]] : []),
       ].map(([k, v], i, arr) => {
         const thick = i === arr.length - 1 ? " thick" : "";
         return `<div class="row${thick}"><strong>${esc(k)}</strong><span>${esc(String(v ?? "").slice(0, 80))}</span></div>`;
@@ -529,6 +537,7 @@
         ${credHtml}
         ${egressHtml}
         <div class="section"><b>Tools</b>${toolsHtml}</div>
+        <p class="section">This payload describes the labeled version. It does not watch the live server. A later <code>tools/list</code> can show added, removed, or renamed tools. It cannot prove that a same-named tool still matches this label.</p>
         <div class="links">${links.join("")}</div>
       </article>`;
     }

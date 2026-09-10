@@ -107,8 +107,10 @@ None required.
 | create_directory | write | read-write | none | no | yes |
 | move_file | write | read-write | none | no | no |
 
-Policy sketch: auto-approve reads; gate every `write`. No network or process spawn
-in this toolset.
+After a human reviews this label, a host might gate every `write` and treat the
+reads as scoped local disk only. That is an example, not a universal
+auto-approval rule. This illustrative toolset has no network and no process
+spawn. Read-only is not the same as universally safe.
 
 ---
 *Generated with [ToolFacts](https://toolfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/)*

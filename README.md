@@ -23,13 +23,13 @@
 
 [AppFacts](https://appfacts.dev) labels the **body** of software. [ModelFacts](https://modelfacts.dev)
 labels the **brain**. **ToolFacts** labels the **toolbelt**: per-tool side effects, reach,
-credentials, and egress for an MCP server, in a format you can validate, parse, and
-(optionally) feed into approval policy.
+credentials, and egress for an MCP server. Reviewers get a structured record they can
+compare and, once appropriately reviewed, use as policy input.
 
 MCP already defines optional tool annotations (`readOnlyHint`, `destructiveHint`,
 `idempotentHint`, `openWorldHint`). Almost no server sets them, they are explicitly
 untrusted, and nothing verifies them. ToolFacts formalizes the same ideas in a file that
-can be CI-checked and human-reviewed.
+can be CI-checked. A schema-valid file is not permission to auto-approve.
 
 **The Golden Rule:** if a piece of information is *subjective* ("powerful search tool"),
 it does not belong in ToolFacts. If it is *objective* ("reads files under the workspace
@@ -41,7 +41,7 @@ called). AgentFacts rolls up; ToolFacts itemizes.
 
 Useful for:
 
-- **Hosts and harnesses** that want a mechanical approval surface for MCP tools
+- **Hosts and harnesses** that want reviewed per-tool evidence for approval decisions
 - **Teams reviewing** which servers can write disk, open the network, or spawn processes
 - **Agent builders** composing `TOOL_FACTS.md` into `AGENT_FACTS.md`
 - **CI** that rejects unlabeled or schema-invalid toolsets
@@ -52,7 +52,7 @@ Teaching ladder (contrast shapes):
 
 | Slug | Worst side effect | Network | Notes |
 |---|---|---|---|
-| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | read | none | Dogfood |
+| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | read | none | Dogfood. `runAudit` returns a prompt (`side_effects: none`). Worst `read` is `validateTracking`. |
 | [filesystem-mcp](./examples/filesystem-mcp/TOOL_FACTS.md) | write | none | Scoped disk |
 | [github-mcp](./examples/github-mcp/TOOL_FACTS.md) | destructive | allowlist | Credentials |
 | [fetch-mcp](./examples/fetch-mcp/TOOL_FACTS.md) | read | unrestricted | Open-world HTTP |
@@ -68,6 +68,17 @@ has many products; only these three expose MCP, so only these three get a
 | [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` 0.3.5 | read |
 | [ollanet-mcp](./examples/ollanet-mcp/TOOL_FACTS.md) | `ollanet mcp` 0.6.8 | destructive |
 | [dictawhisper-mcp](./examples/dictawhisper-mcp/TOOL_FACTS.md) | DictaWhisper MCP 0.0.9 | read |
+
+Same worst-side-effect class is not the same permission question. `forgetrail-mcp`
+and `fetch-mcp` both list worst `read`. ForgeTrail's `read` is a scoped local
+tracking-file check. Fetch is unrestricted HTTP with undisclosed destinations.
+`filesystem-mcp` is a local `write` with no network. ToolFacts does not prescribe
+a universal auto-approval rule.
+
+A label is bound to the server `version`, `generated.date`, and named source.
+This repo has no live drift monitor. A `tools/list` comparison can show added,
+removed, or renamed tools. It cannot prove that a same-named tool still matches
+the label.
 
 Catalog JSON: [`examples/index.json`](./examples/index.json) (also served at
 `/examples/index.json`). Template: [`examples/TOOL_FACTS.template.md`](./examples/TOOL_FACTS.template.md).

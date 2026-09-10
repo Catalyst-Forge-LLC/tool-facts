@@ -107,8 +107,10 @@ production policy use.*
 | create_or_update_file | write | none | allowlist | no | no |
 | merge_pull_request | destructive | none | allowlist | no | no |
 
-Policy sketch: auto-approve reads; gate writes; always prompt on
-`merge_pull_request` and any other destructive tool.
+After a human reviews this label, a host might gate writes and always prompt on
+`merge_pull_request`. Credentials and allowlisted egress still matter even when
+two tools share a side-effect class. A schema-valid file is not permission to
+skip host approvals.
 
 ---
 *Generated with [ToolFacts](https://toolfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/)*

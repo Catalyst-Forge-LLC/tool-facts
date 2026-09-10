@@ -64,9 +64,12 @@ function buildPayload(fm: Record<string, unknown>, opts: { purposes: boolean; ur
     egress: fm.egress,
     tools,
   };
-  if (opts.urls) {
+    if (opts.urls) {
     if (fm.homepage) payload.homepage = fm.homepage;
     if (fm.repository) payload.repository = fm.repository;
+  }
+  if (fm.generated && typeof fm.generated === "object") {
+    payload.generated = fm.generated;
   }
   if (opts.raw) payload.raw = opts.raw;
   const truncated =

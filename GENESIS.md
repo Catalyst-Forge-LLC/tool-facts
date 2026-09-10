@@ -58,6 +58,9 @@ changed is a new file version.
    idempotent tools, gate `write`, always prompt on `destructive`. That makes the
    label *load-bearing* — the first xFacts file that software acts on, not just
    reads. Say this on the site; it's the headline feature.
+
+   Later review: a schema-valid label is input to a host decision after human
+   review, not self-granted permission. Read-only is not universally safe.
 3. **`undisclosed` teeth**, family-standard: an MCP server that won't say which
    hosts it calls home to is a louder signal than any marketing page.
 
@@ -124,6 +127,12 @@ generated:
   generator: hand-authored
 ---
 ```
+
+Later inspection of forgetrail-mcp 0.3.5 showed `runAudit` returns a packaged
+audit prompt and does not scan the workspace. The current label uses
+`side_effects: none` and `filesystem: none`. See
+`examples/forgetrail-mcp/TOOL_FACTS.md`. Do not copy the sketch above as the
+live classification.
 
 `side_effects` is the load-bearing enum. Keep it small and brutal: `none | read |
 write | destructive`. Resist adding a fifth value before v1.0.

@@ -274,6 +274,11 @@ credits:
 | **Status** | active |
 | **License** | Apache-2.0 |
 | **Kind** | mcp-server |
+| **Reviewed** | 2026-09-10 against forgetrail-mcp 0.3.5 (`tools/list` inventory, hand-authored) |
+
+`runAudit` returns a structured audit prompt. It does not scan the workspace or perform the audit. Following those instructions is a later host or agent action, and that later action is outside this tool's labeled side effects.
+
+This file is bound to server version 0.3.5 and the 2026-09-10 review. A later package can change tools or implementations while an old copy of this file remains. Comparing a live `tools/list` can show added, removed, or renamed tools. It cannot prove that a same-named tool still does what this label says.
 
 ## Runtime
 

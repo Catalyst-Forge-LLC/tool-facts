@@ -1,4 +1,4 @@
-# ToolFacts Specification - v0.1.1
+# ToolFacts Specification - v0.1.2
 
 > *"Know what it touches before your agent picks it up."*
 
@@ -128,19 +128,46 @@ the file for human review before publishing.
 | `credits.generated_with` | string (URL) | e.g. `"https://toolfacts.dev"` |
 | `credits.built_by` | string | Author name + link |
 
-## Policy integration (why this label has teeth)
+## Policy integration (input, not permission)
 
-A harness or host **MAY** read `TOOL_FACTS.md` and set approval policy mechanically:
+A harness or host **MAY** consume a reviewed `TOOL_FACTS.md` as evidence under
+that host's own approval policy. Example host rules after review:
 
-- auto-approve tools with `side_effects: none` or `read` when `idempotent: true`
+- treat `side_effects: none` or `read` plus `idempotent: true` as candidates for a lighter prompt
 - gate `write`
 - always prompt on `destructive`
+
+A schema-valid or publisher-authored label is not permission. An unreviewed
+third-party label is not authority to bypass host approvals. Annotations and
+labels are input to a decision.
+
+Read-only is not universally safe. A local scoped file read is not the same as
+unrestricted network read. `side_effects: none` on a tool that returns
+instructions does not cover later host or agent actions that follow those
+instructions.
 
 MCP tool annotations (`readOnlyHint`, `destructiveHint`, `idempotentHint`,
 `openWorldHint`) are optional, usually unset, and explicitly untrusted. ToolFacts
 formalizes the same ideas in a file that can be validated, diffed, and
 human-reviewed. Generators MAY read annotations when present and MUST mark them as
 self-reported.
+
+## Label identity and staleness
+
+A file is bound to the server `version`, the `generated.date` review date, and
+the source named in `generated.generator` (plus `homepage` / `repository` when
+present). One `TOOL_FACTS.md` per toolset version. Material tool or side-effect
+changes mean a new file.
+
+This repository does not ship a live drift monitor or approval panel. The
+documented update path is: refresh the inventory from MCP `tools/list` when the
+package version, license, or advertised tool list changes, then rewrite the
+label and re-encode portable viewer URLs.
+
+A `tools/list` comparison can show added, removed, or renamed tools. It cannot
+prove that a same-named tool still matches the labeled implementation. Body
+text MAY drift from frontmatter if either side is edited by hand. Tooling does
+not verify body-versus-frontmatter consistency.
 
 ## Conventions
 
@@ -149,8 +176,7 @@ self-reported.
   especially egress destinations. An MCP server that will not say which hosts it
   calls home to is a louder signal than any marketing page.
 - Closed enums for judgment fields so files are comparable across toolsets.
-- One `TOOL_FACTS.md` per toolset *version*. Material tool or side-effect changes
-  mean a new file.
+- One `TOOL_FACTS.md` per toolset *version*. See Label identity and staleness.
 - Keep the body short enough to skim in under a minute: which tools write or destroy,
   what they can reach, what credentials the server needs, and what leaves the machine.
 - **Canonical schema URL** (matches the schema `$id`):
@@ -172,7 +198,7 @@ Generators **SHOULD** print the canonical URL (when known) and a `/v#tf1.…` vi
 
 ## Versioning
 
-- **This document:** v0.1.1 (publication & discovery; see revision history).
+- **This document:** v0.1.2 (policy trust boundary and label identity). See revision history.
 - **Files** declare `tool_facts_version` (currently `"0.1.0"`) so tooling can evolve
   independently of the prose document.
 - Required-field list may still change before v1.0.
@@ -186,6 +212,7 @@ Generators **SHOULD** print the canonical URL (when known) and a `/v#tf1.…` vi
 
 | Spec doc | Notes |
 |---|---|
+| **0.1.2** | Policy text is evidence after human review, not self-granted permission. Label identity bound to version, source, and review date. Drift limited to inspectable `tools/list` surface and hand-edit body drift. |
 | **0.1.1** | Publication & discovery: MCP pointer surfaces, URL-preferred refs, link to suite discovery contract. |
 | **0.1.0** | Initial specification, formalizing [`GENESIS.md`](./GENESIS.md): frontmatter + rendered body, server-level groups (identity, runtime, credentials, egress) plus per-tool `side_effects` / `reach` / `idempotent`, closed enums, `undisclosed` convention, policy-integration intent. |
 

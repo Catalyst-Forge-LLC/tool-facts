@@ -78,8 +78,9 @@ None required at the server boundary (commands may still consume ambient credent
 | run_command | destructive | read-write | unrestricted | yes | no |
 | run_script | destructive | read-write | unrestricted | yes | no |
 
-Policy sketch: never auto-approve. Always prompt. Prefer not attaching this
-toolset to unsupervised agents.
+After a human reviews this label, a host should still prompt on every call.
+Process spawn plus unrestricted network is a different permission question than
+a local `write`. This sketch is not a universal policy.
 
 ---
 *Generated with [ToolFacts](https://toolfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/)*

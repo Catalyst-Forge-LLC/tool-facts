@@ -70,9 +70,10 @@ None required.
 |---|---|---|---|---|---|
 | fetch | read | none | unrestricted | no | yes |
 
-Policy sketch: treat unrestricted network as gated even when `side_effects` is
-`read` - data exfiltration and SSRF risk live in the URL argument, not in a
-filesystem write.
+After a human reviews this label, treat unrestricted network as gated even when
+`side_effects` is `read`. Data exfiltration and SSRF risk live in the URL
+argument, not in a filesystem write. The same `read` class as a local scoped
+file tool is not the same permission question.
 
 ---
 *Generated with [ToolFacts](https://toolfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/)*

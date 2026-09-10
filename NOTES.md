@@ -48,6 +48,11 @@ Canonical product copies live next to the servers:
 Refresh those when `tools/list` or the package version/license changes, then copy
 into `examples/<slug>/` and `site/examples/<slug>/`, then `pnpm encode-viewer`.
 
+There is no live drift panel. `tools/list` can show added, removed, or renamed
+tools. It cannot prove a same-named tool still matches the label. The 2026-09-10
+review found the homepage card had attributed `validateTracking`'s scoped read
+to `runAudit`. `runAudit` returns a prompt (`side_effects: none`).
+
 ## Next
 
 1. MCP `tools/list` generator (still the scale path).
