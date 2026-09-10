@@ -20,6 +20,8 @@ Undisclosed beats guessing. AgentFacts rolls up; ToolFacts itemizes.
 
 Catalyst Forge dogfood (see `dogfood: true` in the catalog): forgetrail-mcp, ollanet-mcp, dictawhisper-mcp.
 
+v0.1 labels MCP servers only. Most products on https://catalystforge.com/tools/ have no MCP and therefore no TOOL_FACTS.md. Skills: https://skillfacts.dev . Apps: https://appfacts.dev .
+
 ## Spec (git)
 
 - https://github.com/Catalyst-Forge-LLC/tool-facts/blob/main/SPEC.md

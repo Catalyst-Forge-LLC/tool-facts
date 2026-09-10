@@ -2,7 +2,7 @@
 tool_facts_version: "0.1.0"
 name: ForgeTrail MCP Server
 developer: Catalyst Forge
-version: "0.2.2"
+version: "0.3.5"
 status: active
 license: Apache-2.0
 kind: mcp-server
@@ -258,8 +258,8 @@ tools:
       processes: false
     idempotent: true
 generated:
-  date: 2026-08-20
-  generator: hand-authored (tools inventory from forgetrail-mcp 0.2.2)
+  date: 2026-09-10
+  generator: hand-authored (tools inventory from forgetrail-mcp 0.3.5)
 credits:
   generated_with: https://toolfacts.dev
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
@@ -270,7 +270,7 @@ credits:
 | | |
 |---|---|
 | **Developer** | Catalyst Forge |
-| **Version** | 0.2.2 |
+| **Version** | 0.3.5 |
 | **Status** | active |
 | **License** | Apache-2.0 |
 | **Kind** | mcp-server |

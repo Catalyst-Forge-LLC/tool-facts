@@ -2,9 +2,9 @@
 tool_facts_version: "0.1.0"
 name: DictaWhisper MCP Server
 developer: Catalyst Forge
-version: "0.0.3"
+version: "0.0.9"
 status: active
-license: Apache-2.0
+license: MIT
 kind: mcp-server
 homepage: https://dictawhisper.com
 repository: https://github.com/Catalyst-Forge-LLC/dictawhisper
@@ -50,8 +50,8 @@ tools:
       processes: false
     idempotent: true
 generated:
-  date: 2026-08-20
-  generator: hand-authored (tools inventory from dictawhisper mcp (read-only journal))
+  date: 2026-09-10
+  generator: hand-authored (tools inventory from dictawhisper mcp 0.0.9, read-only journal)
 credits:
   generated_with: https://toolfacts.dev
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
@@ -62,9 +62,9 @@ credits:
 | | |
 |---|---|
 | **Developer** | Catalyst Forge |
-| **Version** | 0.0.3 |
+| **Version** | 0.0.9 |
 | **Status** | active |
-| **License** | Apache-2.0 |
+| **License** | MIT |
 | **Kind** | mcp-server |
 
 ## Runtime

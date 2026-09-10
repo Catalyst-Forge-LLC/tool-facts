@@ -2,9 +2,9 @@
 tool_facts_version: "0.1.0"
 name: ollanet MCP Server
 developer: Catalyst Forge
-version: "0.6.6"
+version: "0.6.8"
 status: active
-license: Apache-2.0
+license: MIT
 kind: mcp-server
 homepage: https://ollanet.dev
 repository: https://github.com/Catalyst-Forge-LLC/ollanet
@@ -34,7 +34,7 @@ tools:
       processes: false
     idempotent: false
   - name: ollanet_compare
-    purpose: "Run the same prompt against multiple hosts/models and return a comparison"
+    purpose: "Run the same prompt on 2-5 models on one Ollama host; may write compares/*.md and .json"
     side_effects: write
     reach:
       filesystem: scoped
@@ -90,8 +90,8 @@ tools:
       processes: false
     idempotent: true
 generated:
-  date: 2026-08-20
-  generator: hand-authored (tools inventory from ollanet mcp 0.6.6)
+  date: 2026-09-10
+  generator: hand-authored (tools inventory from ollanet mcp 0.6.8)
 credits:
   generated_with: https://toolfacts.dev
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
@@ -102,9 +102,9 @@ credits:
 | | |
 |---|---|
 | **Developer** | Catalyst Forge |
-| **Version** | 0.6.6 |
+| **Version** | 0.6.8 |
 | **Status** | active |
-| **License** | Apache-2.0 |
+| **License** | MIT |
 | **Kind** | mcp-server |
 
 ## Runtime
@@ -145,7 +145,7 @@ None required.
 |---|---|
 | `ollanet_scan` | Discover reachable Ollama hosts and list their models; optional LAN TCP scan |
 | `ollanet_prompt` | Send a prompt to an Ollama host or continue a saved chat; may persist transcript locally |
-| `ollanet_compare` | Run the same prompt against multiple hosts/models and return a comparison |
+| `ollanet_compare` | Run the same prompt on 2-5 models on one Ollama host; may write compares/*.md and .json |
 | `ollanet_pull` | Pull (download) a model onto a remote Ollama host |
 | `ollanet_show` | Show model metadata from an Ollama host |
 | `ollanet_rm` | Remove a model from an Ollama host |

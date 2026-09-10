@@ -3,6 +3,8 @@
 Curated `TOOL_FACTS.md` files that teach the format by contrast. YAML frontmatter
 is the source of truth; validate with the CLI in `../validator`.
 
+## Teaching ladder
+
 | Slug | Worst side effect | Network | Teaches |
 |---|---|---|---|
 | [forgetrail-mcp](./forgetrail-mcp/TOOL_FACTS.md) | read | none | Dogfood / guidance MCP |
@@ -10,6 +12,21 @@ is the source of truth; validate with the CLI in `../validator`.
 | [github-mcp](./github-mcp/TOOL_FACTS.md) | destructive | allowlist | Credentials + remote API |
 | [fetch-mcp](./fetch-mcp/TOOL_FACTS.md) | read | unrestricted | Open-world HTTP |
 | [shell-mcp](./shell-mcp/TOOL_FACTS.md) | destructive | unrestricted | Process spawn worst case |
+
+## Shelf dogfood
+
+v0.1 labels **MCP servers**. The [Catalyst Forge tools shelf](https://catalystforge.com/tools/)
+has many products. Only three expose MCP, so only three have ToolFacts. The rest
+are CLIs, skills, userscripts, or sites: AppFacts for the body, SkillFacts for
+the playbook.
+
+| Product | MCP | Label | Worst side effect |
+|---|---|---|---|
+| [ForgeTrail](./forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` | yes | read |
+| [ollanet](./ollanet-mcp/TOOL_FACTS.md) | `ollanet mcp` | yes | destructive |
+| [DictaWhisper](./dictawhisper-mcp/TOOL_FACTS.md) | `dictawhisper` MCP | yes | read |
+| Smell Check, Detangler, Misemphasis, Cold-eye, TemperPass, EmberDossier, Gap Last, DocuPuncture | none | SkillFacts | — |
+| FilePress, IngotVault, Finetuna, HaulOut, LocalSlip, LocalHelm, gui4cli, ForeBalance, xFacts hub | none | AppFacts (where shipped) | — |
 
 Machine index: [`index.json`](./index.json). Template: [`TOOL_FACTS.template.md`](./TOOL_FACTS.template.md).
 

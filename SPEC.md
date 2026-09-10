@@ -177,7 +177,10 @@ Generators **SHOULD** print the canonical URL (when known) and a `/v#tf1.…` vi
   independently of the prose document.
 - Required-field list may still change before v1.0.
 - Non-MCP kinds (`ide-plugin`, `api-toolkit`) are reserved for a later minor version;
-  v0.1 ships `mcp-server` only.
+  v0.1 ships `mcp-server` only. A CLI, skill, userscript, or site does **not** get a
+  `TOOL_FACTS.md` until it exposes an MCP server. Label those with AppFacts (body)
+  and/or SkillFacts (playbook). Inventing a toolbelt label for a skill-only package
+  misrepresents the instrument.
 
 ## Revision history
 

@@ -48,6 +48,8 @@ Useful for:
 
 ## Exemplars
 
+Teaching ladder (contrast shapes):
+
 | Slug | Worst side effect | Network | Notes |
 |---|---|---|---|
 | [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | read | none | Dogfood |
@@ -56,8 +58,20 @@ Useful for:
 | [fetch-mcp](./examples/fetch-mcp/TOOL_FACTS.md) | read | unrestricted | Open-world HTTP |
 | [shell-mcp](./examples/shell-mcp/TOOL_FACTS.md) | destructive | unrestricted | Process spawn |
 
+Shelf dogfood (MCP servers we ship). The [Catalyst Forge tools shelf](https://catalystforge.com/tools/)
+has many products; only these three expose MCP, so only these three get a
+`TOOL_FACTS.md`. Skills use [SkillFacts](https://skillfacts.dev). Apps use
+[AppFacts](https://appfacts.dev).
+
+| Product | MCP | Worst side effect |
+|---|---|---|
+| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` 0.3.5 | read |
+| [ollanet-mcp](./examples/ollanet-mcp/TOOL_FACTS.md) | `ollanet mcp` 0.6.8 | destructive |
+| [dictawhisper-mcp](./examples/dictawhisper-mcp/TOOL_FACTS.md) | DictaWhisper MCP 0.0.9 | read |
+
 Catalog JSON: [`examples/index.json`](./examples/index.json) (also served at
 `/examples/index.json`). Template: [`examples/TOOL_FACTS.template.md`](./examples/TOOL_FACTS.template.md).
+ Full shelf table: [`examples/README.md`](./examples/README.md).
 
 ## What it looks like
 
@@ -98,7 +112,7 @@ optional LLM classification only for `side_effects`, sanitized against the schem
 
 - [x] Spec v0.1.0, canonical JSON Schema, template
 - [x] Schema validator CLI (TypeScript)
-- [x] Multi-type exemplar ladder + `/examples/index.json` + `llms.txt`
+- [x] Multi-type exemplar ladder + shelf MCP dogfood + `/examples/index.json` + `llms.txt`
 - [x] Portable `/v#tf1.…` viewer with flip-to-raw + copy; exemplars deep-link in
 - [ ] Generator: MCP introspection + schema heuristics + optional LLM classification
 - [ ] Directory of labeled public MCP servers (shared crawl with AgentFacts)
