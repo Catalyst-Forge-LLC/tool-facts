@@ -2,7 +2,7 @@
 tool_facts_version: "0.1.0"
 name: ForgeTrail MCP Server
 developer: Catalyst Forge
-version: "0.3.5"
+version: "0.3.10"
 status: active
 license: Apache-2.0
 kind: mcp-server
@@ -233,6 +233,14 @@ tools:
       network: none
       processes: false
     idempotent: true
+  - name: getCompanionSuggestions
+    purpose: "Return optional Catalyst Forge companion tools for a ForgeTrail phase or situation"
+    side_effects: none
+    reach:
+      filesystem: none
+      network: none
+      processes: false
+    idempotent: true
   - name: getPlanModePatterns
     purpose: "Return guidance for using native agent plan modes as Phase 1"
     side_effects: none
@@ -258,8 +266,8 @@ tools:
       processes: false
     idempotent: true
 generated:
-  date: 2026-09-10
-  generator: hand-authored (tools inventory from forgetrail-mcp 0.3.5)
+  date: 2026-09-16
+  generator: hand-authored (tools inventory from forgetrail-mcp 0.3.10)
 credits:
   generated_with: https://toolfacts.dev
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
@@ -270,15 +278,15 @@ credits:
 | | |
 |---|---|
 | **Developer** | Catalyst Forge |
-| **Version** | 0.3.5 |
+| **Version** | 0.3.10 |
 | **Status** | active |
 | **License** | Apache-2.0 |
 | **Kind** | mcp-server |
-| **Reviewed** | 2026-09-10 against forgetrail-mcp 0.3.5 (`tools/list` inventory, hand-authored) |
+| **Reviewed** | 2026-09-16 against forgetrail-mcp 0.3.10 (`tools/list` inventory, hand-authored) |
 
 `runAudit` returns a structured audit prompt. It does not scan the workspace or perform the audit. Following those instructions is a later host or agent action, and that later action is outside this tool's labeled side effects.
 
-This file is bound to server version 0.3.5 and the 2026-09-10 review. A later package can change tools or implementations while an old copy of this file remains. Comparing a live `tools/list` can show added, removed, or renamed tools. It cannot prove that a same-named tool still does what this label says.
+This file is bound to server version 0.3.10 and the 2026-09-16 review. A later package can change tools or implementations while an old copy of this file remains. Comparing a live `tools/list` can show added, removed, or renamed tools. It cannot prove that a same-named tool still does what this label says.
 
 ## Runtime
 
@@ -298,7 +306,7 @@ None required.
 | Telemetry | none |
 | Destinations | (none) |
 
-## Tools (30)
+## Tools (31)
 
 | Tool | Side effects | Filesystem | Network | Processes | Idempotent |
 |---|---|---|---|---|---|
@@ -329,6 +337,7 @@ None required.
 | `validateTracking` | read | scoped | none | no | yes |
 | `suggestSubagentDecomposition` | none | none | none | no | yes |
 | `ingestPlanArtifact` | none | none | none | no | yes |
+| `getCompanionSuggestions` | none | none | none | no | yes |
 | `getPlanModePatterns` | none | none | none | no | yes |
 | `getAgentIntegrationGuide` | none | none | none | no | yes |
 | `getForgeTrailSkill` | none | none | none | no | yes |
@@ -364,6 +373,7 @@ None required.
 | `validateTracking` | Validate .forgetrail/workflow_tracking.json (inline JSON or optional filesystem path) against schema and phase rules |
 | `suggestSubagentDecomposition` | Return recommended subagent spawn parameters for a phase and task |
 | `ingestPlanArtifact` | Map an approved plan artifact into a PHASE_1_BRIEF.md draft plus decisions[] entries |
+| `getCompanionSuggestions` | Return optional Catalyst Forge companion tools for a ForgeTrail phase or situation |
 | `getPlanModePatterns` | Return guidance for using native agent plan modes as Phase 1 |
 | `getAgentIntegrationGuide` | Return tailored ForgeTrail bootstrap mappings for a specific agent host |
 | `getForgeTrailSkill` | Return the canonical forgetrail SKILL.md for skill-capable agents |

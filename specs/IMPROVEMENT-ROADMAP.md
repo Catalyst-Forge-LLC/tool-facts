@@ -14,7 +14,7 @@ host** to gate on `side_effects` / reach. That closes the consumer loop.
 ## Where ToolFacts stands
 
 SPEC/schema/validator, 5-type exemplar ladder, 3 shelf MCP dogfood labels
-(forgetrail-mcp 0.3.5, ollanet 0.6.8, dictawhisper 0.0.9), `llms.txt`,
+(forgetrail-mcp 0.3.10, ollanet 0.6.13, dictawhisper 0.1.2), `llms.txt`,
 `/examples/index.json`, portable `/v#tf1` with flip/copy, encode-viewer.
 Generator still plan-only. No public directory crawl yet. Deployed at
 toolfacts.dev.
@@ -27,7 +27,7 @@ toolfacts.dev.
 | **No harness consumer** | Network effects stay latent. |
 | Empty directory | Cold start; `undisclosed` only bites with coverage. |
 | Self-report risk | Wrong `none` on destructive tools is worse than silence. |
-| Incomplete ForgeTrail inventory | **Done 2026-09-10:** 30 tools from forgetrail-mcp 0.3.5. Re-check on the next MCP bump. |
+| Incomplete ForgeTrail inventory | **Done 2026-09-16:** 31 tools from forgetrail-mcp 0.3.10 (includes `getCompanionSuggestions`). Re-check on the next MCP bump. |
 
 ## Improvements (ordered)
 

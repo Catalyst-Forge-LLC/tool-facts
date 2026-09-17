@@ -2,7 +2,7 @@
 tool_facts_version: "0.1.0"
 name: ollanet MCP Server
 developer: Catalyst Forge
-version: "0.6.8"
+version: "0.6.13"
 status: active
 license: MIT
 kind: mcp-server
@@ -90,8 +90,8 @@ tools:
       processes: false
     idempotent: true
 generated:
-  date: 2026-09-10
-  generator: hand-authored (tools inventory from ollanet mcp 0.6.8)
+  date: 2026-09-16
+  generator: hand-authored (tools inventory from ollanet mcp 0.6.13)
 credits:
   generated_with: https://toolfacts.dev
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
@@ -102,7 +102,7 @@ credits:
 | | |
 |---|---|
 | **Developer** | Catalyst Forge |
-| **Version** | 0.6.8 |
+| **Version** | 0.6.13 |
 | **Status** | active |
 | **License** | MIT |
 | **Kind** | mcp-server |
