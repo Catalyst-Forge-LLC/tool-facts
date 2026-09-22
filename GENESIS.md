@@ -71,7 +71,7 @@ changed is a new file version.
   body-vs-frontmatter.
 - **The Golden Rule:** objective facts only. "Powerful search tool" is README talk.
   "Reads files under the workspace root, no network access" is a fact.
-- **`undisclosed` over omission** for knowingly withheld facts.
+- **`undisclosed` over omission** for facts that are not disclosed.
 - **Closed enums for judgment fields** so files are comparable across toolsets.
 - **Licensing:** spec & schema CC0, tooling MIT.
 - **Design:** AppFacts design system with a distinct accent (ModelFacts is violet

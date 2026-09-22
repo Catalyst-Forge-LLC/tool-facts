@@ -90,7 +90,7 @@
         "destinations": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 },
-          "description": "Hosts data is sent to. Empty when none. Use [\"undisclosed\"] when withheld."
+          "description": "Hosts data is sent to. Empty when none. Use [\"undisclosed\"] when not disclosed."
         }
       },
       "additionalProperties": false

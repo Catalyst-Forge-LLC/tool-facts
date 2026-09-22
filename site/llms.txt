@@ -1,6 +1,6 @@
 # ToolFacts
 
-> Nutrition-label facts for MCP servers / toolsets. Prefer structured YAML/JSON over marketing HTML.
+> Nutrition-label facts for tools and toolsets. v0.1 covers MCP servers (`kind: mcp-server`). Prefer structured YAML/JSON over marketing HTML.
 
 ## Primary
 

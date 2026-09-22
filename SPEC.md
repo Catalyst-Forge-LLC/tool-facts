@@ -172,9 +172,9 @@ not verify body-versus-frontmatter consistency.
 ## Conventions
 
 - **Objective facts only** (the Golden Rule). Marketing language belongs in the README.
-- **`undisclosed` over omission** for facts the developer knowingly withholds - 
-  especially egress destinations. An MCP server that will not say which hosts it
-  calls home to is a louder signal than any marketing page.
+- **`undisclosed` over omission** for facts that are not disclosed, especially egress
+  destinations. `undisclosed` records absence, not intent. A policy that needs a host
+  list should treat an `undisclosed` egress value as unknown, not as none.
 - Closed enums for judgment fields so files are comparable across toolsets.
 - One `TOOL_FACTS.md` per toolset *version*. See Label identity and staleness.
 - Keep the body short enough to skim in under a minute: which tools write or destroy,

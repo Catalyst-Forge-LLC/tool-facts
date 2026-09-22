@@ -1,12 +1,12 @@
 <h1 align="center">ToolFacts</h1>
 
 <p align="center">
-  <strong>A "Nutrition Facts" label for MCP servers and toolsets.</strong>
+  <strong>A "Nutrition Facts" label for tools.</strong>
 </p>
 
 <p align="center">
   A tiny, standardized <code>TOOL_FACTS.md</code> that answers one question in under a
-  minute: <em>what does this instrument touch when invoked?</em>
+  minute: <em>what does this tool touch when invoked?</em> Version 0.1 covers MCP servers.
 </p>
 
 <p align="center">
@@ -23,8 +23,10 @@
 
 [AppFacts](https://appfacts.dev) labels the **body** of software. [ModelFacts](https://modelfacts.dev)
 labels the **brain**. **ToolFacts** labels the **toolbelt**: per-tool side effects, reach,
-credentials, and egress for an MCP server. Reviewers get a structured record they can
-compare and, once appropriately reviewed, use as policy input.
+credentials, and egress for a toolset that software or an agent can call. Version 0.1
+defines one kind, `mcp-server`; other kinds may arrive in a later minor version. Reviewers
+get a structured record they can compare and, once appropriately reviewed, use as policy
+input.
 
 MCP already defines optional tool annotations (`readOnlyHint`, `destructiveHint`,
 `idempotentHint`, `openWorldHint`). Almost no server sets them, they are explicitly
