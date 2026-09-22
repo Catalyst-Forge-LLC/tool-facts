@@ -65,9 +65,9 @@ has many products; only these three expose MCP, so only these three get a
 
 | Product | MCP | Worst side effect |
 |---|---|---|
-| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` 0.3.5 | read |
-| [ollanet-mcp](./examples/ollanet-mcp/TOOL_FACTS.md) | `ollanet mcp` 0.6.8 | destructive |
-| [dictawhisper-mcp](./examples/dictawhisper-mcp/TOOL_FACTS.md) | DictaWhisper MCP 0.0.9 | read |
+| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` 0.3.10 | read |
+| [ollanet-mcp](./examples/ollanet-mcp/TOOL_FACTS.md) | `ollanet mcp` 0.6.13 | destructive |
+| [dictawhisper-mcp](./examples/dictawhisper-mcp/TOOL_FACTS.md) | DictaWhisper MCP 0.1.2 | read |
 
 Same worst-side-effect class is not the same permission question. `forgetrail-mcp`
 and `fetch-mcp` both list worst `read`. ForgeTrail's `read` is a scoped local
@@ -147,7 +147,7 @@ Session plan: [`specs/REVIEW-AND-PLAN.md`](./specs/REVIEW-AND-PLAN.md).
 
 Part of [xFacts](https://xfacts.dev): [AppFacts](https://appfacts.dev) ·
 [ModelFacts](https://modelfacts.dev) · [AgentFacts](https://agentfacts.dev) ·
-[SkillFacts](https://skillfacts.dev) · ToolFacts.
+[SkillFacts](https://skillfacts.dev) · [FeatureFacts](https://featurefacts.dev) · ToolFacts.
 
 ## License
 

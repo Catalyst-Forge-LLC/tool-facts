@@ -19,7 +19,7 @@ Session plan: [`specs/REVIEW-AND-PLAN.md`](./specs/REVIEW-AND-PLAN.md).
 | SPEC v0.1.1 | Done (v0.1 files; mcp-server only) |
 | Schema + validator | Done; exemplars validate |
 | Teaching ladder (5) | forgetrail / filesystem / github / fetch / shell |
-| Shelf MCP dogfood (3) | forgetrail-mcp 0.3.5, ollanet 0.6.8, dictawhisper 0.0.9 |
+| Shelf MCP dogfood (3) | forgetrail-mcp 0.3.10, ollanet 0.6.13, dictawhisper 0.1.2 |
 | `site/examples` + `llms.txt` | Done |
 | Generator | Still plan-only |
 | Public directory crawl | Not this session |
