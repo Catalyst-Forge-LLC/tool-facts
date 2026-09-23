@@ -161,3 +161,5 @@ Part of [xFacts](https://xfacts.dev): [AppFacts](https://appfacts.dev) ·
 <p align="center">
   <em>"Know what it touches before your agent picks it up."</em>
 </p>
+
+[See the rest of the Catalyst Forge shelf.](https://catalystforge.com/tools/)
