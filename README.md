@@ -28,10 +28,9 @@ defines one kind, `mcp-server`; other kinds may arrive in a later minor version.
 get a structured record they can compare and, once appropriately reviewed, use as policy
 input.
 
-MCP already defines optional tool annotations (`readOnlyHint`, `destructiveHint`,
-`idempotentHint`, `openWorldHint`). Almost no server sets them, they are explicitly
-untrusted, and nothing verifies them. ToolFacts formalizes the same ideas in a file that
-can be CI-checked. A schema-valid file is not permission to auto-approve.
+MCP annotations (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`)
+are optional hints. ToolFacts adds a versioned, reviewable record of per-tool side
+effects and reach. Schema validity alone is not permission to auto-approve.
 
 **The Golden Rule:** if a piece of information is *subjective* ("powerful search tool"),
 it does not belong in ToolFacts. If it is *objective* ("reads files under the workspace
@@ -104,22 +103,27 @@ See the [ForgeTrail worked example](./examples/forgetrail-mcp/TOOL_FACTS.md) and
 
 `side_effects` is the load-bearing enum: `none | read | write | destructive`.
 
-## Validating a file
+## Authoring a label
+
+Today, author the label from the template and validate it. The automated generator is planned. A valid label still needs review against the server version it describes.
+
+A toolset's per-tool reach must be compatible with the agent configuration that includes it. A narrower agent label needs an explicit, evidenced configuration restriction. The ForgeTrail reference pair is [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) and the [AgentFacts reference](https://agentfacts.dev/examples/forgetrail-reference/AGENT_FACTS.md): `validateTracking` is a scoped filesystem read, and the agent label says filesystem `scoped`.
 
 ```bash
+git clone https://github.com/Catalyst-Forge-LLC/tool-facts
+cd tool-facts
+# copy examples/TOOL_FACTS.template.md, then fill it for one server version
 cd validator
 pnpm install
 pnpm validate ../examples/forgetrail-mcp/TOOL_FACTS.md
-pnpm validate ../examples/*/TOOL_FACTS.md
+pnpm validate path/to/TOOL_FACTS.md
 ```
 
 Schema: [`site/schema/tool-facts.schema.json`](./site/schema/tool-facts.schema.json).
 
 ## Generating a label
 
-The generator is planned, not shipped yet. Plan: MCP handshake (`tools/list`) first;
-optional LLM classification only for `side_effects`, sanitized against the schema. See
-[`generator/README.md`](./generator/README.md).
+The generator is a design, not a command you can run. The plan is an MCP handshake (`tools/list`) first, then optional classification only for `side_effects`. See [`generator/README.md`](./generator/README.md). Do not treat sketches in that file as an install recipe.
 
 ## Roadmap
 

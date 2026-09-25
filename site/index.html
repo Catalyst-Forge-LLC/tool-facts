@@ -466,7 +466,7 @@
     <section id="why">
       <div class="wrap prose">
         <h2 class="section-title">Why it exists</h2>
-        <p class="section-lead">MCP annotations exist. Almost nobody sets them, and hosts are told not to trust them.</p>
+        <p class="section-lead">MCP annotations are optional hints. ToolFacts adds a reviewed record of side effects and reach.</p>
         <p>
           <a href="https://appfacts.dev">AppFacts</a> labels the <strong>body</strong>.
           <a href="https://modelfacts.dev">ModelFacts</a> labels the <strong>brain</strong>.
@@ -640,14 +640,16 @@ generated:
       <div class="wrap">
         <h2 class="section-title">Validate one</h2>
         <p class="section-lead">
-          Hand-author from the template. Start from MCP <code>tools/list</code>, then classify
-          reach and side effects. The validator is the CI gate. A generator is optional.
+          Today, copy the template, describe one server version, and validate the file.
+          The automated generator is planned. A valid label still needs review.
         </p>
         <div class="split">
-          <pre># validate any TOOL_FACTS.md (CI-friendly exit codes)
-cd tool-facts/validator &amp;&amp; pnpm install
+          <pre>git clone https://github.com/Catalyst-Forge-LLC/tool-facts
+cd tool-facts
+# copy examples/TOOL_FACTS.template.md and fill one server version
+cd validator &amp;&amp; pnpm install
 pnpm validate ../examples/forgetrail-mcp/TOOL_FACTS.md
-pnpm validate ../examples/*/TOOL_FACTS.md</pre>
+pnpm validate path/to/TOOL_FACTS.md</pre>
           <div class="prose">
             <p>
               Frontmatter is checked against
