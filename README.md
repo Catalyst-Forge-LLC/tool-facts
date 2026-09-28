@@ -66,7 +66,7 @@ has many products; only these three expose MCP, so only these three get a
 
 | Product | MCP | Worst side effect |
 |---|---|---|
-| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` 0.3.10 | read |
+| [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) | `forgetrail-mcp` 0.4.3 | read |
 | [ollanet-mcp](./examples/ollanet-mcp/TOOL_FACTS.md) | `ollanet mcp` 0.6.13 | destructive |
 | [dictawhisper-mcp](./examples/dictawhisper-mcp/TOOL_FACTS.md) | DictaWhisper MCP 0.1.2 | read |
 
