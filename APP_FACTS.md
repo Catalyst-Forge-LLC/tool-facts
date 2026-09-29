@@ -1,6 +1,6 @@
 ---
 app_facts_version: 0.1.0
-name: tool-facts
+name: ToolFacts
 type: library
 status: active
 license: MIT
@@ -21,7 +21,7 @@ credits:
   built_by: "Catalyst Forge — https://www.catalystforge.com/"
 ---
 
-# tool-facts
+# ToolFacts
 
 `library` · **active** · MIT
 
@@ -50,4 +50,4 @@ _None listed_
 ---
 *Generated with [AppFacts](https://appfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/) · [Visual label][appfacts-label]*
 
-[appfacts-label]: https://appfacts.dev/v#af1.eNpNj8FqwzAQRP9lznJMr7oGAg1JL82tlLCWFWUbWSuklcGE_Htxcsl15jGPuWOG_TBINHlYqEjsLuS0wkCXvGaRh0JlgUFV0lZhQU559jCI7HyqK3X8PL0Id4O9I1IKjcLa7Gmmb1c4KwxKS8pP1ZeMfvP39IhETgEWOeUJD4PR5wr782swNI7jOpjJ3Sj480SJgi9vcPFZKquUBRZX1Vxt3wfWaxs2TqZ-S0pxqdrtpATfHQ7b_u3m4x_uAlcH
+[appfacts-label]: https://appfacts.dev/v#af1.eNpNj8FqwzAQRP9lznJMr7oGAi1pL82tlLKWVWUbWSuklcGE_HuRe-l15jGPuWOFfTJItHhYXETiiZxWGOiWexR5KlQ2GFQlbRUW5JRXD4PIzqfaqdfnyx_hbrB3REqhUejNC6307gpnhUFpSXk3vcnsDz-7RyRyCrDIKS94GMw-V9iPT4OpcZz7YCZ3o-C_FkoUfPkHF5-lskrZYHFVzdWOY2C9tungZBmPpBS3qsNJSvDD-Xwcu3H43m8-fgGCM1aa
