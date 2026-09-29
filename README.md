@@ -110,14 +110,10 @@ Today, author the label from the template and validate it. The automated generat
 A toolset's per-tool reach must be compatible with the agent configuration that includes it. A narrower agent label needs an explicit, evidenced configuration restriction. The ForgeTrail reference pair is [forgetrail-mcp](./examples/forgetrail-mcp/TOOL_FACTS.md) and the [AgentFacts reference](https://agentfacts.dev/examples/forgetrail-reference/AGENT_FACTS.md): `validateTracking` is a scoped filesystem read, and the agent label says filesystem `scoped`.
 
 ```bash
-git clone https://github.com/Catalyst-Forge-LLC/tool-facts
-cd tool-facts
-# copy examples/TOOL_FACTS.template.md, then fill it for one server version
-cd validator
-pnpm install
-pnpm validate ../examples/forgetrail-mcp/TOOL_FACTS.md
-pnpm validate path/to/TOOL_FACTS.md
+npx @xfacts/toolfacts validate path/to/TOOL_FACTS.md
 ```
+
+The template is [`examples/TOOL_FACTS.template.md`](./examples/TOOL_FACTS.template.md). Node 22.18 or newer.
 
 Schema: [`site/schema/tool-facts.schema.json`](./site/schema/tool-facts.schema.json).
 

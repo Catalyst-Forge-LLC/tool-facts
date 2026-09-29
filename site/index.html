@@ -644,12 +644,7 @@ generated:
           The automated generator is planned. A valid label still needs review.
         </p>
         <div class="split">
-          <pre>git clone https://github.com/Catalyst-Forge-LLC/tool-facts
-cd tool-facts
-# copy examples/TOOL_FACTS.template.md and fill one server version
-cd validator &amp;&amp; pnpm install
-pnpm validate ../examples/forgetrail-mcp/TOOL_FACTS.md
-pnpm validate path/to/TOOL_FACTS.md</pre>
+          <pre>npx @xfacts/toolfacts validate path/to/TOOL_FACTS.md</pre>
           <div class="prose">
             <p>
               Frontmatter is checked against
