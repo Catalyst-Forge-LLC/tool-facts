@@ -4,6 +4,8 @@ A tiny CLI that checks the YAML frontmatter of a `TOOL_FACTS.md` file against th
 canonical JSON Schema ([`site/schema/tool-facts.schema.json`](../site/schema/tool-facts.schema.json),
 served at [toolfacts.dev/schema/tool-facts.schema.json](https://toolfacts.dev/schema/tool-facts.schema.json)).
 
+The command is `toolfacts validate <file>` from `@xfacts/toolfacts` (Node 22.18 or newer). In this repository, `pnpm validate` runs the same program.
+
 ## Usage
 
 ```bash
@@ -16,5 +18,5 @@ pnpm validate ../examples/TOOL_FACTS.template.md
 pnpm validate path/to/your/TOOL_FACTS.md
 ```
 
-TypeScript, ESM, run via `tsx`. Uses [ajv](https://ajv.js.org/) (draft-07) with
+TypeScript, ESM. Node runs the source directly. Uses [ajv](https://ajv.js.org/) (draft-07) with
 `ajv-formats` and [yaml](https://eemeli.org/yaml/).

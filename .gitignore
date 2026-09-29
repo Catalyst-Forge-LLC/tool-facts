@@ -5,3 +5,7 @@ dist/
 .DS_Store
 .wrangler/
 __pycache__/
+
+# Schema copied by prepack for the published package.
+validator/schema/
+validator/LICENSE
